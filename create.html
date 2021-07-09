@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Signup page{% endblock %}
+
+
+{% block body %}
+     <center> <h1> ToDo SignUp Form </h1> </center>   
+    <form action="{{url_for('signup')}}" method="POST">
+            <label>Full Name : </label>   
+            <input type="text" placeholder="Enter name " name="name" required>
+            <label>Email Id : </label>  
+            <input type="Email" placeholder="Enter Email id" name="emailid" required> 
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
+            <button type="submit">Create</button>   
+            <input type="checkbox" checked="checked"> Remember me   
+            <button type="button" class="cancelbtn"> Cancel</button>  
+            {% if not error: %}
+            <p>Go back to <a href="{{url_for('login')}}">LogIn Page</a></p>  
+            {% endif %}
+            <br><br>
+            <p>{{msg}}</p>  
+    </form> 
+{% endblock %}

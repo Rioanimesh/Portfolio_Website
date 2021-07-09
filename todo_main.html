@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="static/todo_css.css">
+  <!-- <link rel="stylesheet" href="static/model_css.css"> -->
+</head>
+
+<body>
+  <h1>Todo List</h1>
+  <div class="todo_content">
+    {% if session.name %}
+    <div class="msg_show">
+      <h4>You are Welcome {{ session.name }} !!!</h4>
+      <center>{{msg2}}</center>
+    </div>
+    <div class="add_work">
+      <form action="{{url_for('todo')}}" method="POST">
+        <input type="text" placeholder="add work..." name="work">
+        <button type="submit" name="add_work_btn" value="add_work_btn">ADD</button>
+      </form>
+    </div>
+    <div id="contaner" class="main">
+      <div class="content" id="scroll">
+        <table class="table">
+          <tr>
+            <th class="table head work">Todo</th>
+            <th class="table head">Date & Time</th>
+            <th class="table head">Operation</th>
+
+          </tr>
+          <tbody class="table_body">
+            {% for i in todos %}
+            <tr>
+              <td class="table_data">{{i[0]}}</td>
+              <td class="table_data">{{i[1]}}</td>
+              <form action="{{url_for('todo')}}" method="POST">
+                <td class="table_data">
+                  <button id="myBtn" class="update" type="submit" name="update_btn" value={{i[2]}} onclick=u_clk()>
+                    update- {{i[2]}}</button>
+                  <button class="delete" type="submit" name="delete_btn" value={{i[2]}}>delete</button>
+                </td>
+              </form>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id='popupmodel' class="model">
+      <span id="close_btn" class="close">&times;</span>
+      <input id="todos" class="input_text" type="text" placeholder="update your work">
+      <button id="ubtn" class="model_btn" onclick=update_btn_clk()>Update</button>
+    </div>
+  </div>
+  <script src="static/model_js.js">
+  </script>
+  {% endif %}
+
+</body>
+
+</html>

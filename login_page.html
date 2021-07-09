@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Login page{% endblock %}
+
+
+{% block body %}
+<center> <h1> Todo Login Form </h1> </center>   
+<form action="{{url_for('login')}}" method="POST">  
+        <label>Username : </label>   
+        <input type="text" placeholder="Enter Username" name="username" required>  
+        <label>Password : </label>   
+        <input type="password" placeholder="Enter Password" name="password" required>  
+        <button type="submit">Login</button>   
+        <a href="{{url_for('signup')}}">Create account</a>
+        <br><br>
+        <center>{{msg}}</center>
+
+</form> 
+
+{% endblock %}   
+
+
+

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.todo_content{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.add_work{
+    background-color: rgb(49, 141, 141);
+}
+
+h1{
+    text-align: center;
+    margin: 0.5em auto;
+}
+.main{
+    width: 70%;
+    margin: 3em auto;
+    background-color: rgb(168, 168, 168);
+    box-shadow: 0 0 9px  black;
+    /* height: 500px; */
+}
+.content{
+    margin: 1.5em;
+    padding: 2em 0.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.table{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-color: aqua; */
+    margin: 0px auto;
+    /* padding: 1em; */
+    /* box-shadow: 0 0 9px  black; */
+   
+}
+.head{
+    background-color: rgb(63, 102, 1);
+    color: white;
+    padding: 0.3em 3em;
+    /* margin: .5em; */
+}
+.work{  
+    width: 60%;
+}
+
+.table_data{
+    background-color: rgb(52, 100, 84);
+    color: white;
+    text-align: center;
+    height: 2em;
+}
+.update , .delete{
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: .4em 0em;
+    border-style: none;
+    color: white;
+    /* border-style: none; */
+}
+.update{
+    background-color: rgb(0, 31, 209);
+}
+.delete{
+    background-color: rgb(199, 0, 0);
+}
+.update:hover {
+    background-color: rgb(0, 0, 110);
+}
+.delete:hover {
+    background-color: rgb(87, 0, 0);
+}
